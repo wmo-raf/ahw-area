@@ -1,0 +1,50 @@
+{
+  "logger": {
+    "name": "ahw-area",
+    "level": "info",
+    "toFile": false,
+    "dirLogFile": null,
+    "graylog": {
+      "host": null,
+      "port": null
+    }
+  },
+  "auth": {
+    "secret": null,
+    "clientId": null
+  },
+  "service": {
+    "id": "ahw-area",
+    "name": "AHW Area API",
+    "port": 4100
+  },
+  "mongodb": {
+    "database": null,
+    "host": null,
+    "port": 27017,
+    "useUnifiedTopology": true,
+    "username": null,
+    "password": null
+  },
+  "s3": {
+    "endPoint": null,
+    "forcePathStyle": true,
+    "accessKeyId": null,
+    "secretAccessKey": null,
+    "bucket": null,
+    "folder": "area-thumbnail"
+  },
+  "sparkpost": {
+    "key": null
+  },
+  "ahw": {
+    "flagshipUrl": null
+  },
+  "datasets": {},
+  "gcs": {
+    "keyFilePath": null,
+    "bucket": null,
+    "folder": null
+  },
+  "mbglRenderApiUrl": ""
+}

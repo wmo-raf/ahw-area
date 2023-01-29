@@ -1,0 +1,1 @@
+# Africa Hazards Watch Area API

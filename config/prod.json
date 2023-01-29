@@ -1,0 +1,15 @@
+{
+  "logger": {
+    "name": "ahw-area",
+    "toFile": false,
+    "dirLogFile": null
+  },
+  "service": {
+  },
+  "s3": {
+    "folder": "areas"
+  },
+  "gfw": {
+    "flagshipUrl": "https://www.globalforestwatch.org/"
+  }
+}

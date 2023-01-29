@@ -1,0 +1,18 @@
+{
+  "logger": {
+    "name": "ahw-area",
+    "toFile": false,
+    "dirLogFile": null
+  },
+  "service": {
+  },
+  "s3": {
+    "accessKeyId": null,
+    "secretAccessKey": null,
+    "bucket": null,
+    "folder": "areas-staging"
+  },
+  "gfw": {
+    "flagshipUrl": "https://staging.globalforestwatch.org/"
+  }
+}

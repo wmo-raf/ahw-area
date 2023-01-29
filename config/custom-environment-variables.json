@@ -1,0 +1,44 @@
+{
+  "service": {
+    "port": "PORT"
+  },
+  "auth": {
+    "secret": "KC_REALM_PUBLIC_KEY",
+    "clientId": "KC_CLIENT_ID"
+  },
+  "mongodb": {
+    "host": "MONGO_HOST",
+    "port": "MONGO_PORT",
+    "username": "MONGO_INITDB_ROOT_USERNAME",
+    "password": "MONGO_INITDB_ROOT_PASSWORD",
+    "database": "MONGO_DB_NAME",
+    "useUnifiedTopology": "MONGO_DB_USE_UNIFIED_TOPOLOGY"
+  },
+  "s3": {
+    "endPoint": "S3_ENDPOINT",
+    "forcePathStyle": "S3_FORCE_PATHSTYLE",
+    "accessKeyId": "S3_ACCESS_KEY_ID",
+    "secretAccessKey": "S3_SECRET_ACCESS_KEY",
+    "bucket": "S3_BUCKET"
+  },
+  "logger": {
+    "level": "LOGGER_LEVEL",
+    "graylog": {
+      "host": "GRAYLOG_HOST",
+      "port": "GRAYLOG_PORT"
+    }
+  },
+  "sparkpost": {
+    "key": "SPARKPOST_KEY"
+  },
+  "ahw": {
+    "flagshipUrl": "ahw_FLAGSHIP_URL"
+  },
+  "datasets": {},
+  "gcs": {
+    "keyFilePath": "GCS_KEY_FILE_PATH",
+    "bucket": "GCS_BUCKET",
+    "folder": "GCS_FOLDER"
+  },
+  "mbglRenderApiUrl": "MGBL_RENDER_API_URL"
+}

@@ -1,0 +1,43 @@
+version: '3.0'
+
+services:
+  ahw_area_db:
+    image: mongo:4.2
+    container_name: ahw_area_db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ${DB_DATA_VOLUME}:/data/db
+    restart: ${RESTART_POLICY}
+  ahw_area:
+      image: africahazardswa.org/ahw-area
+      build: .
+      container_name: ahw_area
+      restart: ${RESTART_POLICY}
+      command: bash -c "/wait && yarn start"
+      environment:
+        - WAIT_HOSTS=ahw_area_db:27017
+        - PORT=3005
+        - LOGGER_LEVEL=${LOGGER_LEVEL}
+        - MONGO_DB_USE_UNIFIED_TOPOLOGY=true
+        - MONGO_URI=mongodb://${DB_USER}:${DB_PASSWORD}@ahw_area_db:27017
+        - KC_REALM_PUBLIC_KEY=${KC_REALM_PUBLIC_KEY}
+        - KC_CLIENT_ID=${KC_CLIENT_ID}
+        - SPARKPOST_KEY=${SPARKPOST_KEY}
+        - AHW_FLAGSHIP_URL=${AHW_FLAGSHIP_URL}
+        - MGBL_RENDER_API_URL=${MGBL_RENDER_API_URL}
+        - GRAYLOG_HOST=${GRAYLOG_HOST}
+        - GRAYLOG_PORT=${GRAYLOG_PORT}
+        - S3_ENDPOINT=${S3_ENDPOINT}
+        - S3_ACCESS_KEY_ID=${S3_ACCESS_KEY_ID}
+        - S3_SECRET_ACCESS_KEY=${S3_SECRET_ACCESS_KEY}
+        - S3_BUCKET=${S3_BUCKET}
+      ports:
+        - ${PORT}:3005
+      depends_on:
+        - ahw_area_db
+networks:
+    default:
+      name:  ${AHW_DOCKER_NETWORK}
+      external: true
