@@ -4,12 +4,14 @@ services:
   ahw_area_db:
     image: mongo:4.2
     container_name: ahw_area_db
+    restart: ${RESTART_POLICY}
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${DB_USER}
       - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
     volumes:
       - ${DB_DATA_VOLUME}:/data/db
-    restart: ${RESTART_POLICY}
+    ports:
+      - 27017
   ahw_area:
       image: africahazardswa.org/ahw-area
       build: .
